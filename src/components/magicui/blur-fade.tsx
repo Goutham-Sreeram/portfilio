@@ -1,7 +1,8 @@
 "use client";
 
-import { AnimatePresence, motion, useInView, Variants } from "framer-motion";
+import { AnimatePresence, motion, useInView, Variants, } from "framer-motion";
 import { useRef } from "react";
+
 
 interface BlurFadeProps {
   children: React.ReactNode;
@@ -14,12 +15,7 @@ interface BlurFadeProps {
   delay?: number;
   yOffset?: number;
   inView?: boolean;
-  inViewMargin?: boolean | number | string | {
-    top?: number | string;
-    right?: number | string;
-    bottom?: number | string;
-    left?: number | string;
-  };
+  inViewMargin?: string;
   blur?: string;
 }
 const BlurFade = ({
@@ -34,10 +30,7 @@ const BlurFade = ({
   blur = "6px",
 }: BlurFadeProps) => {
   const ref = useRef(null);
-  const inViewResult = useInView(ref, { 
-    once: true, 
-   
-  });
+  const inViewResult = useInView(ref, { once: true, margin: inViewMargin } as any);
   const isInView = !inView || inViewResult;
   const defaultVariants: Variants = {
     hidden: { y: yOffset, opacity: 0, filter: `blur(${blur})` },
