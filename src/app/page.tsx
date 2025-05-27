@@ -207,7 +207,7 @@ export default function Page() {
                   Student Communities
                 </h2>
                 <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  I've been actively involved in various student communities, taking on leadership roles and organizing events.
+                  I&apos;ve been actively involved in various student communities, taking on leadership roles and organizing events.
                 </p>
               </div>
             </div>
